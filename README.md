@@ -40,4 +40,4 @@ Puchi Universe(プチユニバース/プチユニ)は、ドール・フィギュ
 ・よく見るタグからおすすめを表示
 
 ### その後の機能
-https://www.figma.com/file/qh8lrycltl0g1oo8GIj5TY/runteq-Graduation-exam?type=design&node-id=0-1&mode=design&t=vp3Sx0JrRwXYA7qF-0
+https://www.figma.com/file/qh8lrycltl0g1oo8GIj5TY/runteq-Graduation-exam?type=design&node-id=0%3A1&mode=design&t=vp3Sx0JrRwXYA7qF-1
