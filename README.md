@@ -38,3 +38,6 @@ Puchi Universe(プチユニバース/プチユニ)は、ドール・フィギュ
 ・フォローユーザーの新着画像の表示
 ・全体のユーザーの新着画像の表示
 ・よく見るタグからおすすめを表示
+
+### その後の機能
+https://www.figma.com/file/qh8lrycltl0g1oo8GIj5TY/runteq-Graduation-exam?type=design&node-id=0-1&mode=design&t=vp3Sx0JrRwXYA7qF-0
