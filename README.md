@@ -43,4 +43,4 @@ Puchi Universe(プチユニバース/プチユニ)は、ドール・フィギュ
 https://www.figma.com/file/qh8lrycltl0g1oo8GIj5TY/runteq-Graduation-exam?type=design&node-id=0%3A1&mode=design&t=vp3Sx0JrRwXYA7qF-1
 
 ### ER図
-[![Image from Gyazo](https://i.gyazo.com/ae223d04cb2f5d6a501fab56123ab273.png)]
+[![Image from Gyazo](https://i.gyazo.com/4846425a1da6be896f2687811ea845f3.png)]
