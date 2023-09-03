@@ -30,4 +30,14 @@
 # Ignore master key for decrypting credentials and more.
 /config/master.key
 
-vendor/bundle
+# Ignore installed gem files.
+/vendor/bundle
+
+# Ignore node modules
+/node_modules
+
+# Ignore files related to IDE
+/.vscode
+
+# Ignore other unneeded files.
+.DS_Store
