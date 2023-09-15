@@ -1,4 +1,4 @@
 Rails.application.routes.draw do
-  root "galleries/index"
+  root "galleries#index"
   get 'galleries/index'
 end
