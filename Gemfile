@@ -44,9 +44,21 @@ gem 'jsbundling-rails'
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"
 
+#[https://github.com/ViewComponent/view_component]
+gem "view_component"
+
+#[https://github.com/svenfuchs/rails-i18n]
+gem 'rails-i18n', '~> 7.0.0'
+
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
-  gem "debug", platforms: %i[ mri mingw x64_mingw ]
+  #gem "debug", platforms: %i[ mri mingw x64_mingw ]
+
+  #[https://github.com/rspec/rspec-rails]
+  gem 'rspec-rails'
+
+  #[https://github.com/thoughtbot/factory_bot_rails]
+  gem 'factory_bot_rails'
 end
 
 group :development do
@@ -58,4 +70,21 @@ group :development do
 
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
   # gem "spring"
+
+  #[https://github.com/BetterErrors/better_errors]
+  gem "better_errors"
+  gem "binding_of_caller"
+
+  #[https://github.com/rubocop/rubocop]
+  gem 'rubocop', require: false
+  #[https://github.com/rubocop/rubocop-rails]
+  gem 'rubocop-rails', require: false
+
+end
+
+group :test do
+  gem "shoulda-matchers"
+  gem "capybara"
+  gem "selenium-webdriver"
+  gem "webdrivers"
 end
