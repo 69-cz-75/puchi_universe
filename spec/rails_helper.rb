@@ -29,6 +29,13 @@ begin
 rescue ActiveRecord::PendingMigrationError => e
   abort e.to_s.strip
 end
+
+#view_component公式ドキュメントより追記
+#[https://viewcomponent.org/guide/testing.html#:~:text=end%0A%20%20end%0Aend-,RSpec,-%E3%81%AE%E6%A7%8B%E6%88%90]
+require "view_component/test_helpers"
+require "view_component/system_test_helpers"
+require "capybara/rspec"
+
 RSpec.configure do |config|
   # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures
   config.fixture_path = "#{::Rails.root}/spec/fixtures"
@@ -60,4 +67,10 @@ RSpec.configure do |config|
   config.filter_rails_from_backtrace!
   # arbitrary gems may also be filtered via:
   # config.filter_gems_from_backtrace("gem name")
+
+  #view_component公式ドキュメントより追記
+  #[https://viewcomponent.org/guide/testing.html#:~:text=end%0A%20%20end%0Aend-,RSpec,-%E3%81%AE%E6%A7%8B%E6%88%90]
+  config.include ViewComponent::TestHelpers, type: :component
+  config.include ViewComponent::SystemTestHelpers, type: :component
+  config.include Capybara::RSpecMatchers, type: :component
 end

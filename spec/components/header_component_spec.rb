@@ -3,13 +3,10 @@
 require "rails_helper"
 
 RSpec.describe HeaderComponent, type: :component do
-  pending "add some examples to (or delete) #{__FILE__}"
+  it "ロゴの表示" do
+    render_inline(HeaderComponent.new(header: 'Myheader'))
 
-  # it "renders something useful" do
-  #   expect(
-  #     render_inline(described_class.new(attr: "value")) { "Hello, components!" }.css("p").to_html
-  #   ).to include(
-  #     "Hello, components!"
-  #   )
-  # end
+    expect(page).to have_selector("img[alt='header_logo']")
+  end
+
 end
