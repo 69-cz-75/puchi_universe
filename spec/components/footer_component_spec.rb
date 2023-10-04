@@ -3,13 +3,21 @@
 require "rails_helper"
 
 RSpec.describe FooterComponent, type: :component do
-  pending "add some examples to (or delete) #{__FILE__}"
+  it "利用規約の表示" do
+    render_inline(FooterComponent.new(footer: 'Myfooter'))
 
-  # it "renders something useful" do
-  #   expect(
-  #     render_inline(described_class.new(attr: "value")) { "Hello, components!" }.css("p").to_html
-  #   ).to include(
-  #     "Hello, components!"
-  #   )
-  # end
+    expect(rendered_content).to have_css("a.link.link-hover", text: '利用規約')
+  end
+
+  it "プライバシーポリシーの表示" do
+    render_inline(FooterComponent.new(footer: 'Myfooter'))
+
+    expect(rendered_content).to have_css("a.link.link-hover", text: 'プライバシーポリシー')
+  end
+
+  it "お問い合わせ" do
+    render_inline(FooterComponent.new(footer: 'Myfooter'))
+
+    expect(rendered_content).to have_css("a.link.link-hover", text: 'お問い合わせ')
+  end
 end
