@@ -15,12 +15,12 @@
           <% if @minimum_password_length %>
           <em>(<%= @minimum_password_length %> characters minimum)</em>
           <% end %><br />
-          <%= f.password_field :password, placeholder: "Email Address", class: "w-full input input-bordered", autocomplete: "new-password" %>
+          <%= f.password_field :password, placeholder: "Password", class: "w-full input input-bordered", autocomplete: "new-password" %>
         </div>
 
         <div class="field mb-5">
           <%= f.label :password_confirmation %><br />
-          <%= f.password_field :password_confirmation, placeholder: "Email Address", class: "w-full input input-bordered", autocomplete: "new-password" %>
+          <%= f.password_field :password_confirmation, placeholder: "Password confirmation", class: "w-full input input-bordered", autocomplete: "new-password" %>
         </div>
 
         <div class="actions mb-7">

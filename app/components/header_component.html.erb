@@ -16,6 +16,9 @@
             <!-- Sidebar content here -->
               <li><a>Sidebar Item 1</a></li>
               <li><a>Sidebar Item 2</a></li>
+              <% if helpers.current_user %>
+                <%= button_to 'Sign out', destroy_user_session_path, method: :delete %>
+              <% end %>
             </ul>
         </div>
       </div>
