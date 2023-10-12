@@ -10,7 +10,4 @@ Rails.application.routes.draw do
     registrations:  'users/registrations'
   }
 
-  devise_scope :user do
-    delete 'users/sign_out', to: 'users/sessions#destroy'
-  end
 end
