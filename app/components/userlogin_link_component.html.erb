@@ -1,0 +1,7 @@
+<% if request.path == new_user_session_path && !helpers.user_signed_in? %>
+  <!-- ログインページで、かつユーザーが未ログインの場合のコード -->
+  <%= link_to('Sign up', new_user_registration_path, class: 'btn btn-primary m-5') %>
+<% elsif !helpers.user_signed_in? %>
+  <!-- その他のページで、かつユーザーが未ログインの場合のコード -->
+  <%= link_to('Sign in', new_user_session_path, class: 'btn btn-active btn-ghost') %>
+<% end %>
