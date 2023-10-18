@@ -11,8 +11,8 @@
   </head>
 
   <body>
-    <%= render(HeaderComponent.new(header: @header)) %>
+    <%= render 'shared/header' %>
     <%= yield %>
-    <%= render(FooterComponent.new(footer: @footer))%>
+    <%= render 'shared/footer' %>
   </body>
 </html>
