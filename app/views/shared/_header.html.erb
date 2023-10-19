@@ -1,0 +1,62 @@
+<header>
+  <div class="navbar bg-base-100">
+    <!-- Navbar -->
+    <div class="navbar-start">
+      <div class="flex-none">
+        <!-- ハンバーガーメニュー -->
+        <div class="drawer">
+          <input id="my-drawer-3" type="checkbox" class="drawer-toggle" />
+          <div class="drawer-content">
+            <label for="my-drawer-3" class="btn btn-square btn-ghost">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="inline-block w-6 h-6 stroke-current"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+            </label>
+          </div>
+          <div class="drawer-side text-center mb-2">
+            <label for="my-drawer-3" class="drawer-overlay"></label>
+              <ul class="menu p-4 w-80 min-h-full bg-base-200">
+              <!-- Sidebar content here -->
+                <% if !current_user %>
+                  <%= render(LoginButtonComponent.new(loginbutton: @loginbutton)) %>
+                  <%= render(SignupButtonComponent.new(signupbutton: @signupbutton)) %>
+                  <hr>
+                <% end %>
+
+                <% if current_user %>
+                  <%= button_to 'Sign out', destroy_user_session_path, method: :delete, class: 'btn btn-ghost btn-block mb-2' %>
+                <% end %>
+
+                <hr class="mb-2">
+                <%= link_to 'Terms of Service', terms_of_service_path, class: 'btn btn-ghost mb-2' %>
+                <%= link_to 'Privacy Policy', privacy_policy_path, class: 'btn btn-ghost mb-2' %>
+
+              </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="navbar-center">
+      <%= link_to root_path do %>
+        <!--ロゴは仮ロゴ。もう少し小さいサイズにしたい-->
+        <%= image_tag('logo.png', alt: 'header_logo') %>
+      <% end %>
+    </div>
+
+
+    <div class="navbar-end">
+      <button class="btn btn-ghost mx-5">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
+      </button>
+
+      <!--アカウント登録ボタンとログインボタンの表示-->
+      <% if request.path == new_user_session_path && !user_signed_in? %>
+        <!-- ログインページで、かつユーザーが未ログインの場合のコード -->
+        <%= render(SignupButtonComponent.new(signupbutton: @signupbutton)) %>
+      <% elsif !user_signed_in? %>
+        <!-- その他のページで、かつユーザーが未ログインの場合のコード -->
+        <%= render(LoginButtonComponent.new(loginbutton: @loginbutton)) %>
+      <% end %>
+    </div>
+    
+  </div>
+</header>
