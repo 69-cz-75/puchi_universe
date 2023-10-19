@@ -3,11 +3,9 @@
 require "rails_helper"
 
 RSpec.describe LoginButtonComponent, type: :component do
-  pending "add some examples to (or delete) #{__FILE__}"
+  it "ログインボタンの表示" do
+    render_inline(LoginButtonComponent.new(loginbutton: 'Login in'))
 
-  #     render_inline(described_class.new(attr: "value")) { "Hello, components!" }.css("p").to_html
-  #   ).to include(
-  #     "Hello, components!"
-  #   )
-  # end
+    expect(rendered_content).to have_css('a.btn.btn-active.btn-ghost', text: 'Log in')
+  end
 end

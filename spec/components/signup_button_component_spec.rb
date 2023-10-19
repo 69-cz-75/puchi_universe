@@ -3,13 +3,9 @@
 require "rails_helper"
 
 RSpec.describe SignupButtonComponent, type: :component do
-  pending "add some examples to (or delete) #{__FILE__}"
+  it "ログインボタンの表示" do
+    render_inline(SignupButtonComponent.new(signupbutton: 'Sign up'))
 
-  # it "renders something useful" do
-  #   expect(
-  #     render_inline(described_class.new(attr: "value")) { "Hello, components!" }.css("p").to_html
-  #   ).to include(
-  #     "Hello, components!"
-  #   )
-  # end
+    expect(rendered_content).to have_css('a.btn.btn-active.btn-accent', text: 'Sign up')
+  end
 end
