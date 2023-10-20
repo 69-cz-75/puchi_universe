@@ -1,0 +1,23 @@
+ja:
+  defaults:
+    signup: 'アカウントを作成'
+    login: 'ログイン'
+    logout: 'ログアウト'
+  users:
+    sessions:
+      new:
+        Email Address: 'メールアドレス'
+        Password: 'パスワード'
+    registrations:
+      new:
+        Email Address: 'メールアドレス'
+        Password: 'パスワード'
+        Password_confirmation: '確認用パスワード'
+        characters minimum: '文字以上'
+  static_pages:
+    terms_of_service:
+      terms_of_service: '利用規約'
+    privacy_policy:
+      privacy_policy: 'プライバシーポリシー'
+    
+
