@@ -1,35 +1,35 @@
 <body>
   <div class="relative flex flex-col justify-center min-h-screen overflow-hidden">
     <div class="w-full p-6 m-auto bg-white rounded-md shadow-md ring-2 ring-gray-800/50 md:max-w-lg mx-auto">
-      <h1 class="text-3xl font-semibold text-center text-gray-700">Sign up</h1>
+      <h1 class="text-3xl font-semibold text-center text-gray-700"><%= t 'defaults.signup' %></h1>
       <br>
       <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
 
         <div class="field mb-5">
           <%= f.label :email %><br />
-          <%= f.email_field :email, placeholder: "Email Address", class: "w-full input input-bordered", autofocus: true, autocomplete: "email" %>
+          <%= f.email_field :email, placeholder: (t '.Email Address'), class: "w-full input input-bordered", autofocus: true, autocomplete: "email" %>
         </div>
 
         <div class="field mb-5">
           <%= f.label :password %>
           <% if @minimum_password_length %>
-          <em>(<%= @minimum_password_length %> characters minimum)</em>
+          <em>(<%= @minimum_password_length %><%= t '.characters minimum'%>)</em>
           <% end %><br />
-          <%= f.password_field :password, placeholder: "Password", class: "w-full input input-bordered", autocomplete: "new-password" %>
+          <%= f.password_field :password, placeholder: (t '.Password'), class: "w-full input input-bordered", autocomplete: "new-password" %>
         </div>
 
         <div class="field mb-5">
           <%= f.label :password_confirmation %><br />
-          <%= f.password_field :password_confirmation, placeholder: "Password confirmation", class: "w-full input input-bordered", autocomplete: "new-password" %>
+          <%= f.password_field :password_confirmation, placeholder: (t '.Password_confirmation'), class: "w-full input input-bordered", autocomplete: "new-password" %>
         </div>
 
         <div class="actions mb-7">
-          <%= f.submit "Sign up", class: "btn btn-block" %>
+          <%= f.submit (t 'defaults.signup'), class: "btn btn-active btn-accent btn-block" %>
         </div>
 
         <hr class="mb-5">
         <div class="text-center mb-5">
-          <%= render "users/shared/links" %>
+          <a href="<%= new_user_session_path %>" class="text-base text-gray-600" ><%= t 'defaults.login'%></a>
         </div>
       <% end %>
     </div>
