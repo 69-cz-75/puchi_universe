@@ -4,12 +4,11 @@
       <h1 class="text-3xl font-semibold text-center text-gray-700"><%= t 'defaults.signup' %></h1>
       <br>
       <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-
+        <!-- メールアドレスとパスワードのフィールド -->
         <div class="field mb-5">
           <%= f.label :email %><br />
           <%= f.email_field :email, placeholder: (t '.Email Address'), class: "w-full input input-bordered", autofocus: true, autocomplete: "email" %>
         </div>
-
         <div class="field mb-5">
           <%= f.label :password %>
           <% if @minimum_password_length %>
@@ -18,17 +17,57 @@
           <%= f.password_field :password, placeholder: (t '.Password'), class: "w-full input input-bordered", autocomplete: "new-password" %>
         </div>
 
-        <div class="field mb-5">
-          <%= f.label :password_confirmation %><br />
-          <%= f.password_field :password_confirmation, placeholder: (t '.Password_confirmation'), class: "w-full input input-bordered", autocomplete: "new-password" %>
+        <!-- プロフィール情報のフィールド -->
+        <%= f.fields_for :profile do |profile_fields| %>
+          <div class="field mb-7">
+            <%= profile_fields.label :name %>
+            <%= profile_fields.text_field :name, class: "w-full input input-bordered" %>
+          </div>
+        <% end %>
+
+        <div>
+          <%= f.fields_for :profile do |profile_fields| %>
+            <div class="field mb-7">
+              <%= profile_fields.label :gender %>
+              <div class="flex mb-7"><!--genderのenumに基づいて表示-->
+                <% Profile.genders.keys.each do |gender| %>
+                  <div class="flex items-center mr-4">
+                    <%= profile_fields.radio_button :gender, gender, id: "gender-#{gender}" %>
+                    <%= profile_fields.label gender, class: "text-sm font-medium text-gray-900 ml-2 flex items-center" %>
+                  </div>
+                <% end %>
+              </div>
+            </div>
+          <% end %>
         </div>
 
+        <%= f.fields_for :profile do |profile_fields| %>
+          <div class="field mb-7">
+            <div>
+              <%= profile_fields.label :birthdate %>
+            </div>
+            <div class="inline-flex space-x-3 w-full">
+              <%= profile_fields.date_select :birthdate,
+                {
+                  start_year: Time.now.year - 5,
+                  end_year: 1930,
+                  order: [:year, :month, :day],
+                  use_month_numbers: true,
+                  prompt: { year: '年', month: '月', day: '日' }
+                },
+                class: "btn btn-active btn-neutra flex-grow"
+              %>
+            </div>
+          </div>
+        <% end %>
+
+        <!-- 登録ボタン -->
         <div class="actions mb-7">
           <%= f.submit (t 'defaults.signup'), class: "btn btn-active btn-accent btn-block" %>
         </div>
 
         <hr class="mb-5">
-        <div class="text-center mb-5">
+        <div class="text-center mb-3">
           <a href="<%= new_user_session_path %>" class="text-base text-gray-600" ><%= t 'defaults.login'%></a>
         </div>
       <% end %>

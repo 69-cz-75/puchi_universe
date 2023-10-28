@@ -1,13 +1,15 @@
 # frozen_string_literal: true
 
 class Users::RegistrationsController < Devise::RegistrationsController
-  # before_action :configure_sign_up_params, only: [:create]
+  before_action :configure_sign_up_params, only: [:create]
   # before_action :configure_account_update_params, only: [:update]
 
   # GET /resource/sign_up
-  # def new
-  #   super
-  # end
+  def new
+    build_resource({})
+    resource.build_profile
+    respond_with resource
+  end
 
   # POST /resource
   # def create
@@ -38,12 +40,25 @@ class Users::RegistrationsController < Devise::RegistrationsController
   #   super
   # end
 
-  # protected
+  protected
+
+  def sign_up_params
+    devise_parameter_sanitizer.sanitize(:sign_up) { |user| user.permit(permitted_attributes) }
+  end
 
   # If you have extra params to permit, append them to the sanitizer.
-  # def configure_sign_up_params
-  #   devise_parameter_sanitizer.permit(:sign_up, keys: [:attribute])
-  # end
+  def configure_sign_up_params
+    devise_parameter_sanitizer.permit(:sign_up, keys: permitted_attributes)
+  end
+
+  def permitted_attributes
+    [
+      :email,
+      :password,
+      :remember_me,
+      profile_attributes: %i[name birthdate gender]
+    ]
+  end
 
   # If you have extra params to permit, append them to the sanitizer.
   # def configure_account_update_params
