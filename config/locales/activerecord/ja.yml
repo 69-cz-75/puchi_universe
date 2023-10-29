@@ -6,5 +6,13 @@ ja:
       user:
         email: 'メールアドレス'
         password: 'パスワード'
-        password_confirmation: '確認用パスワード'
         remember_me: '次回から自動的にログイン'
+      profile:
+        name: 'ユーザー名'
+        gender: '性別'
+        birthdate: '生年月日'
+  date:
+    prompts:
+      day: '日'
+      month: '月'
+      year: '年'
