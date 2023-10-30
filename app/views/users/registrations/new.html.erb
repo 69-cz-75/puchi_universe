@@ -6,60 +6,62 @@
       <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
         <!-- メールアドレスとパスワードのフィールド -->
         <div class="field mb-5">
-          <label for="user_email" class="font-semibold"><%= f.label :email %></label>
+          <%= f.label :email, class: "font-semibold", for: "user_email" %>
           <%= f.email_field :email, id: "user_email", class: "w-full input input-bordered", autofocus: true, autocomplete: "email" %>
         </div>
         <div class="field mb-5">
-          <label for="user_password" class="font-semibold"><%= f.label :password %></label>
-          <% if @minimum_password_length %>
-          <em>(<%= @minimum_password_length %><%= t '.characters minimum'%>)</em>
-          <% end %>
+          <%= f.label :password, class: "font-semibold", for: "user_password" %>
+            <% if @minimum_password_length %>
+            <em>(<%= @minimum_password_length %><%= t '.characters minimum'%>)</em>
+            <% end %>
           <%= f.password_field :password, class: "w-full input input-bordered", autocomplete: "new-password" %>
         </div>
 
         <!-- プロフィール情報のフィールド -->
         <%= f.fields_for :profile do |profile_fields| %>
           <div class="field mb-7">
-          <label for="user_name" class="font-semibold"><%= profile_fields.label :name %></label>
-            <%= profile_fields.text_field :name,id: "user_name", class: "w-full input input-bordered" %>
+            <%= profile_fields.label :name, class: "font-semibold", for: "user_name" %>
+            <%= profile_fields.text_field :name, id: "user_name", class: "w-full input input-bordered" %>
           </div>
         <% end %>
 
         <div>
           <%= f.fields_for :profile do |profile_fields| %>
-            <div class="field mb-7">
-              <label for="user_gender" class="font-semibold"><%= profile_fields.label :gender %></label>
+            <fieldset>
+              <legend style="font-weight: bold;" class="font-semibold"><%= t 'profile.gender.gender' %></legend>
               <div class="flex mb-7"><!--genderのenumに基づいて表示-->
                 <% Profile.genders.keys.each do |gender| %>
                   <div class="flex items-center mr-7">
                     <%= profile_fields.radio_button :gender, gender, id: "gender-#{gender}" %>
-                    <%= profile_fields.label gender, t("profile.gender.#{gender}"), class: "text-base font-medium text-gray-900 ml-1 flex items-center" %>
+                    <%= profile_fields.label gender, t("profile.gender.#{gender}"), for: "gender-#{gender}", class: "text-base font-medium text-gray-900 ml-1 flex items-center" %>
                   </div>
                 <% end %>
               </div>
-            </div>
+            </fieldset>
           <% end %>
         </div>
 
         <%= f.fields_for :profile do |profile_fields| %>
-          <div class="field mb-7">
-            <div>
-              <label for="user_name" class="font-semibold"><%= profile_fields.label :birthdate %></label>
+          <fieldset>
+            <div class="field mb-7">
+              <div>
+                <legend style="font-weight: bold;" class="font-semibold"><%= t 'profile.date.birthdate' %></legend>
+              </div>
+              <div class="inline-flex space-x-3 w-full">
+                <%= profile_fields.date_select :birthdate,
+                  {
+                    start_year: Time.now.year - 5,
+                    end_year: 1930,
+                    order: [:year, :month, :day],
+                    use_month_numbers: true,
+                    prompt: { year: t('date.prompts.year'), month: t('date.prompts.month'), day: t('date.prompts.day') },
+                    id: "user_birthdate"
+                  },
+                  class: "btn btn-active btn-neutra flex-grow"
+                %>
+              </div>
             </div>
-            <div class="inline-flex space-x-3 w-full">
-              <%= profile_fields.date_select :birthdate,
-                {
-                  start_year: Time.now.year - 5,
-                  end_year: 1930,
-                  order: [:year, :month, :day],
-                  use_month_numbers: true,
-                  prompt: { year: t('date.prompts.year'), month: t('date.prompts.month'), day: t('date.prompts.day') },
-                  id: "user_birthdate"
-                },
-                class: "btn btn-active btn-neutra flex-grow"
-              %>
-            </div>
-          </div>
+          </fieldset>
         <% end %>
 
         <!-- 登録ボタン -->
@@ -69,7 +71,7 @@
 
         <hr class="mb-5">
         <div class="text-center mb-3">
-          <%=link_to(t('defaults.login'), new_user_session_path, class: 'text-base text-gray-600') %>
+          <%= link_to(t('defaults.login'), new_user_session_path, class: 'text-base text-gray-600') %>
         </div>
       <% end %>
     </div>
