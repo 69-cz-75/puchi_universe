@@ -14,7 +14,7 @@
             <% if @minimum_password_length %>
             <em>(<%= @minimum_password_length %><%= t '.characters minimum'%>)</em>
             <% end %>
-          <%= f.password_field :password, class: "w-full input input-bordered", autocomplete: "new-password" %>
+          <%= f.password_field :password, id: "user_password", class: "w-full input input-bordered", autocomplete: "new-password" %>
         </div>
 
         <!-- プロフィール情報のフィールド -->
@@ -32,8 +32,8 @@
               <div class="flex mb-7"><!--genderのenumに基づいて表示-->
                 <% Profile.genders.keys.each do |gender| %>
                   <div class="flex items-center mr-7">
-                    <%= profile_fields.radio_button :gender, gender, id: "gender-#{gender}" %>
-                    <%= profile_fields.label gender, t("profile.gender.#{gender}"), for: "gender-#{gender}", class: "text-base font-medium text-gray-900 ml-1 flex items-center" %>
+                    <%= profile_fields.radio_button :gender, gender, id: "gender_#{gender}" %>
+                    <%= profile_fields.label gender, t("profile.gender.#{gender}"), for: "gender_#{gender}", class: "text-base font-medium text-gray-900 ml-1 flex items-center" %>
                   </div>
                 <% end %>
               </div>
