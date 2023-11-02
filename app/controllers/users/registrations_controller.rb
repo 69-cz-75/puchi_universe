@@ -12,9 +12,12 @@ class Users::RegistrationsController < Devise::RegistrationsController
   end
 
   # POST /resource
-  # def create
-  #   super
-  # end
+  def create
+    super do |resource|
+      redirect_to root_path # リダイレクト先を設定しないとテストが通らない
+      return
+    end
+  end
 
   # GET /resource/edit
   # def edit

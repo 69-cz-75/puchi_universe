@@ -11,7 +11,7 @@ RSpec.describe "Users", type: :system do
     fill_in "メールアドレス", with: user.email
     fill_in "パスワード", with: user.password
     fill_in "ユーザー名", with: profile.name
-    choose("gender-male")
+    choose("gender_male")
 
     # 誕生日の入力
     select '2012', from: 'user_profile_attributes_birthdate_1i' # 年を選択
