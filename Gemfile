@@ -62,6 +62,9 @@ group :development, :test do
 
   #[https://github.com/thoughtbot/factory_bot_rails]
   gem 'factory_bot_rails'
+
+  #[https://github.com/pry/pry-rails]
+  gem 'pry-rails'
 end
 
 group :development do
