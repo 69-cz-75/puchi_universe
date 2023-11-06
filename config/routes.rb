@@ -10,4 +10,5 @@ Rails.application.routes.draw do
     registrations:  'users/registrations'
   }
 
+  resources :galleries, only: %i[index]
 end
