@@ -1,12 +1,8 @@
-<div class="container mx-auto p-5 lg:h-fit flex items-center justify-center">
-  <div class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
-    <div id="scene-photo-id-<%= scene_photo.id %>">
-      <div class="max-w-sm mx-auto relative shadow-md rounded-lg cursor-pointer">
-        <img src="https://images.unsplash.com/photo-1516205651411-aef33a44f7c2?auto=format&fit=crop&q=80&w=1528&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Img by Meriç Dağlı https://unsplash.com/@meric" class="w-full h-auto object-cover rounded-lg">
-        <div class="absolute bottom-0 left-0 right-0 h-[50%] bg-black bg-opacity-50 backdrop-blur text-white p-4 rounded-b-lg flex flex-col justify-center">
-          <p><%= scene_photo.title %></p>
-        </div>
+<div id="scene-photo-id-<%= scene_photo.id %>">
+  <div class="max-w-sm mx-auto relative shadow-md rounded-lg cursor-pointer">
+    <img src="https://images.unsplash.com/photo-1516205651411-aef33a44f7c2?auto=format&fit=crop&q=80&w=1528&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Img by Meriç Dağlı https://unsplash.com/@meric" class="w-full h-auto object-cover rounded-lg">
+      <div class="absolute bottom-0 left-0 right-0 h-[50%] bg-black bg-opacity-50 backdrop-blur text-white p-4 rounded-b-lg flex flex-col items-start">
+        <p><%= scene_photo.title %></p>
       </div>
-    </div>
   </div>
 </div>
