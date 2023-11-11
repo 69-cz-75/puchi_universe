@@ -1,7 +1,7 @@
-<% if @galleries.present? %>
+<% if @scene_photos.present? %>
   <div class="container mx-auto p-5 lg:h-fit flex items-center justify-center">
     <div class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
-      <%= render @galleries %>
+      <%= render @scene_photos %>
     </div>
   </div>
 <% else %>
