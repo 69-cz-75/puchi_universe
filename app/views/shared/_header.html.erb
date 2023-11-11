@@ -23,7 +23,7 @@
                 <% end %>
 
                 <% if current_user %>
-                  <%= button_to (t 'defaults.logout'), destroy_user_session_path, method: :delete, class: 'btn btn-ghost btn-block mb-2' %>
+                  <%= button_to (t 'defaults.logout'), destroy_user_session_path, method: :delete, class: 'btn btn-ghost btn-block mb-2', id: 'logout-button' %>
                 <% end %>
 
                 <hr class="mb-2">
