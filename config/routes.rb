@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-  root "galleries#index"
-  get 'galleries/index'
+  root "scene_photos#index"
+  get 'scene_photos/index', to: 'scene_photos#index', as: 'galleries'
   get 'museums/index'
 
   get 'terms_of_service', to: 'static_pages#terms_of_service'
@@ -9,5 +9,4 @@ Rails.application.routes.draw do
   devise_for :users, controllers: {
     registrations:  'users/registrations'
   }
-
 end

@@ -1,0 +1,13 @@
+<% if @scene_photos.present? %>
+  <div class="container mx-auto p-5 lg:h-fit flex items-center justify-center">
+    <div class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+      <%= render @scene_photos %>
+    </div>
+  </div>
+<% else %>
+  <div class="h-96">
+    <div class="container mx-auto p-5 sm:h-full flex items-center justify-center">
+      <span class="text-2xl"><%= t('.no_result') %></span>
+    </div>
+  </div>
+<% end %>

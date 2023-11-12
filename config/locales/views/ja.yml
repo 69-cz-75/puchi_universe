@@ -23,4 +23,6 @@ ja:
       prefer_not_to_say: '無回答'
     date:
       birthdate: '生年月日'
-
+  scene_photos:
+    index:
+      no_result: '作品がありません'
