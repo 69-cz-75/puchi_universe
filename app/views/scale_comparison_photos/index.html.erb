@@ -1,0 +1,20 @@
+<div class="flex flex-col w-full sm:flex-row justify-center">
+  <div class="grid flex-0 h-10 card rounded-box place-items-center">
+    <%= link_to((t 'defaults.gallery_index'), galleries_path, style: 'text-decoration: none; border-bottom: 3px solid #8fccdb; color: #999;') %>
+  </div>
+  <div class="divider divider-horizontal"></div>
+  <div class="grid flex-0 h-10 card rounded-box place-items-center ">
+    <%= link_to((t 'defaults.museum_index'), museums_path, style: 'text-decoration: none; border-bottom: 3px solid #1c96B7;') %>
+  </div>
+</div>
+
+
+<% if @scale_comparison_photos.present? %>
+  <%= render @scale_comparison_photos %>
+<% else %>
+  <div class="h-96">
+    <div class="container mx-auto p-5 sm:h-full flex items-center justify-center">
+      <span class="text-2xl"><%= t('.no_result') %></span>
+    </div>
+  </div>
+<% end %>

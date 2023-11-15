@@ -3,6 +3,8 @@ ja:
     signup: 'アカウントを作成'
     login: 'ログイン'
     logout: 'ログアウト'
+    gallery_index: '美術館'
+    museum_index: '博物館'
   users:
     registrations:
       new:
@@ -26,3 +28,6 @@ ja:
   scene_photos:
     index:
       no_result: '作品がありません'
+  scale_comparison_photos:
+    index:
+      no_result: '検索結果:該当なし'
