@@ -6,6 +6,7 @@ class User < ApplicationRecord
 
   has_one :profile, dependent: :destroy
   has_many :scene_photos
+  has_many :scale_comparison_photos
 
   accepts_nested_attributes_for :profile
 
