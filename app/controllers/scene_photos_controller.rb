@@ -8,11 +8,10 @@ class ScenePhotosController < ApplicationController
   end
 
   def create
-    @scene_photo = current_user.scene_photos.build(scene_photo)
+    @scene_photo = current_user.scene_photos.build(scene_photo_params)
     if @scene_photo.save
-      redirect_to galleries_path, success: t('defaults.message.created', item: Board.model_name.human)
+      redirect_to galleries_path
     else
-      flash.now['danger'] = t('defaults.message.not_created', item: Board.model_name.human)
       render :new
     end
   end
