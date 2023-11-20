@@ -33,6 +33,7 @@ ja:
     form:
       new:
         post: '投稿する'
+    untitled: "無題"
   scale_comparison_photos:
     index:
       no_result: '検索結果:該当なし'
