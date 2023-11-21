@@ -5,6 +5,9 @@ ja:
     logout: 'ログアウト'
     gallery_index: '美術館'
     museum_index: '博物館'
+    message:
+      created: '投稿しました'
+      not_created: '投稿できませんでした'
   users:
     registrations:
       new:

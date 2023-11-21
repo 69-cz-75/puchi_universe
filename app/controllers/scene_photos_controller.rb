@@ -8,13 +8,11 @@ class ScenePhotosController < ApplicationController
   end
 
   def create
-    #投稿するボタンを押下した際にタイトルがnilまたは空の時は自動でuntitledを挿入する
-    title = scene_photo_params[:title]
-    title = I18n.t('scene_photos.untitled') if title.nil? || title.empty?
-    @scene_photo = current_user.scene_photos.build(scene_photo_params.merge(title: title))
+    @scene_photo = current_user.scene_photos.build(scene_photo_params)
     if @scene_photo.save
-      redirect_to galleries_path
+      redirect_to galleries_path, flash: { success: t('defaults.message.created') }
     else
+      flash[:error] = t('defaults.message.not_created')
       render :new
     end
   end
