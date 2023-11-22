@@ -1,10 +1,10 @@
 <% flash.each do |message_type, message| %>
-  <div class="alert 
-              <%= case message_type
-                 when 'success' then 'alert alert-info'
-                 when 'error' then 'alert alert-error'
-                 else 'alert'
-                 end %> mb-7 ">
+  <div role="alert" class="
+    <%= case message_type
+      when 'success' then 'alert alert-info'
+      when 'error' then 'alert alert-error'
+      else 'alert'
+      end %> mb-7">
     <%= message %>
   </div>
 <% end %>

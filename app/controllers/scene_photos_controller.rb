@@ -12,7 +12,6 @@ class ScenePhotosController < ApplicationController
     if @scene_photo.save
       redirect_to galleries_path, flash: { success: t('defaults.message.created') }
     else
-      flash[:error] = t('defaults.message.not_created')
       render :new
     end
   end
