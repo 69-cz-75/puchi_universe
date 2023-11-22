@@ -5,6 +5,9 @@ ja:
     logout: 'ログアウト'
     gallery_index: '美術館'
     museum_index: '博物館'
+    message:
+      created: '投稿しました'
+      not_created: '投稿できませんでした'
   users:
     registrations:
       new:
@@ -28,6 +31,12 @@ ja:
   scene_photos:
     index:
       no_result: '作品がありません'
+    new:
+      create: '美術館に投稿'
+    form:
+      new:
+        post: '投稿する'
+    untitled: "無題"
   scale_comparison_photos:
     index:
       no_result: '検索結果:該当なし'

@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   root "scene_photos#index"
   get '/galleries', to: 'scene_photos#index', as: 'galleries'
+  get '/galleries/new', to: 'scene_photos#new'
+  post '/galleries/create', to: 'scene_photos#create'
   get '/museums', to: 'scale_comparison_photos#index', as: 'museums'
 
   get 'terms_of_service', to: 'static_pages#terms_of_service'

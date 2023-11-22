@@ -1,0 +1,15 @@
+<%= form_with model: ScenePhoto.new, url: galleries_create_path do |f| %>
+  <div class="field mb-5">
+    <%= f.label :title, class: 'font-medium', for: "scene_photo_title" %>
+    <%= f.text_field :title, id: "scene_photo_title", class: 'w-full bg-gray-100 border border-gray-300 p-2 mb-4 outline-none', value: '' %>
+  </div>
+  <div class="field mb-5">
+    <%= f.label :caption, class: 'font-medium', for: "scene_photo_caption" %>
+    <%= f.text_area :caption, id: "scene_photo_caption", class: 'w-full bg-gray-100 sec p-3 h-60 border border-gray-300 outline-none' %>
+  </div>
+
+  <!-- Buttons -->
+  <div class="actions mb-7 text-center">
+    <%= f.submit (t '.new.post'), class: "btn btn-active btn-accent" %>
+  </div>
+<% end %>

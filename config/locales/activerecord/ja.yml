@@ -11,6 +11,9 @@ ja:
         name: 'ユーザー名'
         gender: '性別'
         birthdate: '生年月日'
+      scene_photo:
+        title: 'タイトル'
+        caption: 'キャプション'
   date:
     prompts:
       day: '日'
