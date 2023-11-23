@@ -1,17 +1,12 @@
 {
-  "name": "app",
-  "private": "true",
+  "name": "puchi_universe",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:69-cz-75/puchi_universe.git",
+  "author": "shiho <epicurean.love.69@gmail.com>",
+  "license": "MIT",
   "dependencies": {
-    "@hotwired/turbo-rails": "^7.3.0",
-    "autoprefixer": "^10.4.15",
-    "daisyui": "^3.7.3",
-    "esbuild": "^0.19.2",
-    "postcss": "^8.4.29",
-    "tailwindcss": "^3.3.3"
-  },
-  "scripts": {
-    "build:css": "tailwindcss -i ./app/assets/stylesheets/application.tailwind.css -o ./app/assets/builds/application.css --minify",
-    "build": "esbuild app/javascript/*.* --bundle --sourcemap --outdir=app/assets/builds --public-path=/assets"
-  },
-  "packageManager": "yarn@1.22.19"
+    "daisyui": "^4.4.4",
+    "postcss": "^8.4.21"
+  }
 }
