@@ -1,5 +1,3 @@
 class Tag < ApplicationRecord
-  has_one :scale_comparison_photo
-
-  validates :name, presence: true
+  validates :name, presence: true, uniqueness: true
 end
