@@ -1,0 +1,15 @@
+<%= form_with model: ScaleComparisonPhoto.new, url: museums_create_path do |f| %>
+  <div class="field mb-5">
+    <%= f.label :product_name, class: 'font-medium', for: "scale_comparison_photo_product_name" %>
+    <%= f.text_field :product_name, id: "scale_comparison_photo_product_name", class: 'w-full bg-gray-100 border border-gray-300 p-2 mb-4 outline-none' %>
+  </div>
+  <div class="field mb-5">
+    <%= f.label :company, class: 'font-medium', for: "scale_comparison_photo_company" %>
+    <%= f.text_field :company, id: "scale_comparison_photo_company", class: 'w-full bg-gray-100 border border-gray-300 p-2 mb-4 outline-none' %>
+  </div>
+
+  <!-- Buttons -->
+  <div class="actions mb-7 text-center">
+    <%= f.submit (t '.new.post'), class: "btn btn-active btn-accent" %>
+  </div>
+<% end %>

@@ -14,6 +14,9 @@ ja:
       scene_photo:
         title: 'タイトル'
         caption: 'キャプション'
+      scale_comparison_photo:
+        product_name: '商品名'
+        company: '販売元'
   date:
     prompts:
       day: '日'
