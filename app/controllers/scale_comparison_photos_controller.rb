@@ -19,6 +19,6 @@ class ScaleComparisonPhotosController < ApplicationController
   private
 
   def scale_comparison_photo_params
-    params.require(:scale_comparison_photo).permit(:product_name, :company, :kinds, :contents)
+    params.require(:scale_comparison_photo).permit(:product_name, :company, :kind, :content)
   end
 end

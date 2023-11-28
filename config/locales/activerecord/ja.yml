@@ -17,8 +17,8 @@ ja:
       scale_comparison_photo:
         product_name: '商品名'
         company: '販売元'
-        kinds: '種類'
-        contents: '内容'
+        kind: '種類'
+        content: '内容'
   date:
     prompts:
       day: '日'
