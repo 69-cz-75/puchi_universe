@@ -8,6 +8,18 @@
     <%= f.text_field :company, id: "scale_comparison_photo_company", class: 'w-full bg-gray-100 border border-gray-300 p-2 mb-4 outline-none' %>
   </div>
 
+  <div class="field mb-5">
+    <%= f.label :kinds, class: 'font-medium', for: "scale_comparison_photo_kinds" %>
+    <div>
+      <%= f.select :kinds, (1..20).to_a, {}, { id: "scale_comparison_photo_kinds", class: 'w-1/3 bg-gray-100 border border-gray-300 p-2 mb-4 outline-none' } %>
+    </div>
+  </div>
+
+  <div class="field mb-5">
+    <%= f.label :contents, class: 'font-medium', for: "scale_comparison_photo_contents" %>
+    <%= f.text_area :contents, id: "scale_comparison_photo_contents", class: 'w-full bg-gray-100 sec p-3 h-60 border border-gray-300 outline-none' %>
+  </div>
+
   <!-- Buttons -->
   <div class="actions mb-7 text-center">
     <%= f.submit (t '.new.post'), class: "btn btn-active btn-accent" %>
