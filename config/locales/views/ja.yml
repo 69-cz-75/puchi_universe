@@ -40,3 +40,8 @@ ja:
   scale_comparison_photos:
     index:
       no_result: '検索結果:該当なし'
+    new:
+      create: '博物館に投稿'
+    form:
+      new:
+        post: '投稿する'

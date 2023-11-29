@@ -1,4 +1,5 @@
 class ScaleComparisonPhoto < ApplicationRecord
-  belongs_to :tag
   belongs_to :user
+
+  validates :product_name, presence: true
 end
