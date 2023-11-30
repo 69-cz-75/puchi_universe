@@ -12,7 +12,7 @@ class ScenePhotosController < ApplicationController
     if @scene_photo.save
       redirect_to galleries_path, flash: { success: t('defaults.message.created') }
     else
-      render :new
+      render :new, status: :unprocessable_entity
     end
   end
 

@@ -1,4 +1,5 @@
-<%= form_with model: ScenePhoto.new, url: galleries_create_path do |f| %>
+<%= form_with model: @scene_photo, url: galleries_create_path do |f| %>
+  <%= render 'shared/error_messages', object: f.object %>
   <div class="field mb-5">
     <%= f.label :title, class: 'font-medium', for: "scene_photo_title" %>
     <%= f.text_field :title, id: "scene_photo_title", class: 'w-full bg-gray-100 border border-gray-300 p-2 mb-4 outline-none', value: '' %>
