@@ -1,4 +1,5 @@
-<%= form_with model: ScaleComparisonPhoto.new, url: museums_create_path do |f| %>
+<%= form_with model: @scale_comparison_photo, url: museums_create_path do |f| %>
+  <%= render 'shared/error_messages', object: f.object %>
   <div class="field mb-5">
     <%= f.label :product_name, class: 'font-medium', for: "scale_comparison_photo_product_name" %>
     <%= f.text_field :product_name, id: "scale_comparison_photo_product_name", class: 'w-full bg-gray-100 border border-gray-300 p-2 mb-4 outline-none' %>

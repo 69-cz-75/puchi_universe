@@ -12,7 +12,7 @@ class ScaleComparisonPhotosController < ApplicationController
     if @scale_comparison_photo.save
       redirect_to museums_path, flash: { success: t('defaults.message.created') }
     else
-      render :new
+      render :new, status: :unprocessable_entity
     end
   end
 

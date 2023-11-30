@@ -12,9 +12,18 @@ class Users::RegistrationsController < Devise::RegistrationsController
   end
 
   # POST /resource
-  #def create
-  #  super
-  #end
+  def create
+    build_resource(sign_up_params)
+
+    if resource.save
+      sign_up(resource_name, resource)
+      respond_with resource, location: after_sign_up_path_for(resource)
+    else
+      clean_up_passwords resource
+      set_minimum_password_length
+      render :new, status: :unprocessable_entity
+    end
+  end
 
   # GET /resource/edit
   # def edit
