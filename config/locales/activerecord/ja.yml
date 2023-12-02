@@ -12,6 +12,7 @@ ja:
         gender: '性別'
         birthdate: '生年月日'
       scene_photo:
+        image: '画像'
         title: 'タイトル'
         caption: 'キャプション'
       scale_comparison_photo:
