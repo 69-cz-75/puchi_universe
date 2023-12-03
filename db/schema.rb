@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_12_01_023354) do
+ActiveRecord::Schema[7.0].define(version: 2023_12_02_152549) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -32,6 +32,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_12_01_023354) do
     t.string "product_name", null: false
     t.integer "kind"
     t.text "content"
+    t.string "image"
     t.index ["user_id"], name: "index_scale_comparison_photos_on_user_id"
   end
 
