@@ -19,6 +19,6 @@ class ScenePhotosController < ApplicationController
   private
 
   def scene_photo_params
-    params.require(:scene_photo).permit(:title, :caption, :image, :image_cache)
+    params.require(:scene_photo).permit(:title, :caption, { images: [] })
   end
 end
