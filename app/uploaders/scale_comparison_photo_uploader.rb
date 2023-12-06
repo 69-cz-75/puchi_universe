@@ -45,4 +45,9 @@ class ScaleComparisonPhotoUploader < CarrierWave::Uploader::Base
   # def filename
   #   "something.jpg"
   # end
+
+  # ファイルサイズの制限（ひとつの画像ファイルに対して1bから5MBまで）
+  def size_range
+    1.byte..5.megabytes
+  end
 end

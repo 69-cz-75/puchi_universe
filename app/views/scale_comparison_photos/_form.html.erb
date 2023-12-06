@@ -1,14 +1,17 @@
 <%= form_with model: @scale_comparison_photo, url: museums_create_path do |f| %>
   <%= render 'shared/error_messages', object: f.object %>
   <div class="field mb-5">
-    <%= f.label :image, class: 'font-medium', for: "scene_photo_image" %>
+    <%= f.label :images, class: 'font-medium', for: "scene_photo_images" %>
     <br>
-    <%= f.file_field :image, id: "scene_photo_image", class: "file-input file-input-bordered w-full max-w-xs", accept: 'image/*' %>
-    <%= f.hidden_field :scene_photo_image_cache %>
-  </div>
+    <%= f.file_field :images, multiple: true, id: "scene_photo_images", class: "file-input file-input-bordered w-full max-w-xs", accept: 'images/*' %>
+    <p class="text-gray-400">JPEG / GIF / PNG</p>
+    <p class="text-gray-400">1枚5MB以内、最大10枚アップロードできます</p>
+    </div>
   <div class="field mb-5">
-    <%= f.label :product_name, class: 'font-medium', for: "scale_comparison_photo_product_name" %>
-    <%= f.text_field :product_name, id: "scale_comparison_photo_product_name", class: 'w-full bg-gray-100 border border-gray-300 p-2 mb-4 outline-none' %>
+    <div class="flex items-center">
+      <%= f.label :product_name, class: 'font-medium', for: "scale_comparison_photo_product_name" %><span class="text-red-500">*</span>
+    </div>
+      <%= f.text_field :product_name, id: "scale_comparison_photo_product_name", class: 'w-full bg-gray-100 border border-gray-300 p-2 mb-4 outline-none' %>
   </div>
   <div class="field mb-5">
     <%= f.label :company, class: 'font-medium', for: "scale_comparison_photo_company" %>

@@ -1,5 +1,9 @@
 <div class="sm:flex">
-<%=  image_tag scale_comparison_photo.image.thumb.url, class: "w-60 h-60 object-cover rounded-lg" %>
+  <% if scale_comparison_photo.images[0].present? %>
+    <%= image_tag scale_comparison_photo.images[0].thumb.url, class: "w-60 h-60 object-cover rounded-lg" %>
+  <% else %>
+    <%= image_tag 'default.png', class: "w-60 h-60 object-cover rounded-lg" %>
+  <% end %>
     <div class="flex flex-col justify-start py-8 sm:mx-6">
       <a href="#" class="text-xl font-semibold  text-gray-800 mb-2" >
         <%= scale_comparison_photo.product_name %>
