@@ -12,9 +12,11 @@ ja:
         gender: '性別'
         birthdate: '生年月日'
       scene_photo:
+        images: '画像'
         title: 'タイトル'
         caption: 'キャプション'
       scale_comparison_photo:
+        images: '画像'
         product_name: '商品名'
         company: '販売元'
         kind: '種類'

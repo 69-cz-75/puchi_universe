@@ -8,6 +8,9 @@ ja:
     message:
       created: '投稿しました'
       not_created: '投稿できませんでした'
+  errors:
+    messages:
+      extension_allowlist_error: "は許可されていない拡張子が含まれています"
   users:
     registrations:
       new:
