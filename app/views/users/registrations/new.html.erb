@@ -7,21 +7,23 @@
         <%= render 'shared/error_messages', object: f.object %>
         <!-- メールアドレスとパスワードのフィールド -->
         <div class="field mb-5">
-          <%= f.label :email, class: "font-semibold", for: "user_email" %>
+          <%= f.label :email, class: "font-semibold", for: "user_email" %><span class="text-red-500">*</span>
           <%= f.email_field :email, id: "user_email", class: "w-full input input-bordered", autofocus: true, autocomplete: "email" %>
         </div>
         <div class="field mb-5">
-          <%= f.label :password, class: "font-semibold", for: "user_password" %>
+          <div class="flex items-center">
+            <%= f.label :password, class: "font-semibold", for: "user_password" %>
             <% if @minimum_password_length %>
-            <em>(<%= @minimum_password_length %><%= t '.characters minimum'%>)</em>
+            <em>(<%= @minimum_password_length %><%= t '.characters minimum'%>)</em><span class="text-red-500">*</span>
             <% end %>
+          </div>
           <%= f.password_field :password, id: "user_password", class: "w-full input input-bordered", autocomplete: "new-password" %>
         </div>
 
         <!-- プロフィール情報のフィールド -->
         <%= f.fields_for :profile do |profile_fields| %>
           <div class="field mb-7">
-            <%= profile_fields.label :name, class: "font-semibold", for: "user_name" %>
+            <%= profile_fields.label :name, class: "font-semibold", for: "user_name" %><span class="text-red-500">*</span>
             <%= profile_fields.text_field :name, id: "user_name", class: "w-full input input-bordered" %>
           </div>
         <% end %>
@@ -29,7 +31,7 @@
         <div>
           <%= f.fields_for :profile do |profile_fields| %>
             <fieldset>
-              <legend style="font-weight: bold;" class="font-semibold"><%= t 'profile.gender.gender' %></legend>
+              <legend style="font-weight: bold;" class="font-semibold"><%= t 'profile.gender.gender' %><span class="text-red-500">*</span></legend>
               <div class="flex mb-7"><!--genderのenumに基づいて表示-->
                 <% Profile.genders.keys.each do |gender| %>
                   <div class="flex items-center mr-7">
@@ -46,7 +48,7 @@
           <fieldset>
             <div class="field mb-7">
               <div>
-                <legend style="font-weight: bold;" class="font-semibold"><%= t 'profile.date.birthdate' %></legend>
+                <legend style="font-weight: bold;" class="font-semibold"><%= t 'profile.date.birthdate' %><span class="text-red-500">*</span></legend>
               </div>
               <div class="inline-flex space-x-3 w-full">
                 <%= profile_fields.date_select :birthdate,
