@@ -16,6 +16,10 @@ class ScaleComparisonPhotosController < ApplicationController
     end
   end
 
+  def show
+    @scale_comparison_photo = ScaleComparisonPhoto.find(params[:id])
+  end
+
   private
 
   def scale_comparison_photo_params
