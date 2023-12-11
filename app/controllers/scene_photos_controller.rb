@@ -16,6 +16,10 @@ class ScenePhotosController < ApplicationController
     end
   end
 
+  def show
+    @scene_photo = ScenePhoto.find(params[:id])
+  end
+
   private
 
   def scene_photo_params

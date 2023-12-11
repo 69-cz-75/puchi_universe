@@ -29,8 +29,14 @@ class ScenePhotoUploader < CarrierWave::Uploader::Base
   # end
 
   # Create different versions of your uploaded files:
+  #_scene_photo.html.erbでの表示に使用
   version :thumb do
     process resize_to_fit: [226, 240]
+  end
+
+  #show.html.erbでの表示に使用
+  version :detail do
+    process resize_to_fit: [500, 700]
   end
 
   # Add an allowlist of extensions which are allowed to be uploaded.

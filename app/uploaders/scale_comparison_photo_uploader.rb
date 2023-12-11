@@ -34,6 +34,11 @@ class ScaleComparisonPhotoUploader < CarrierWave::Uploader::Base
     process resize_to_fit: [226, 240]
   end
 
+  #show.html.erbでの表示に使用
+  version :detail do
+    process resize_to_fit: [500, 700]
+  end
+
   # Add an allowlist of extensions which are allowed to be uploaded.
   # For images you might use something like this:
   def extension_allowlist

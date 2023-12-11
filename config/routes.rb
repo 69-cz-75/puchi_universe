@@ -3,9 +3,11 @@ Rails.application.routes.draw do
   get '/galleries', to: 'scene_photos#index', as: 'galleries'
   get '/galleries/new', to: 'scene_photos#new'
   post '/galleries/create', to: 'scene_photos#create'
+  get '/galleries/:id', to: 'scene_photos#show', as: 'gallery_show'
   get '/museums', to: 'scale_comparison_photos#index', as: 'museums'
   get '/museums/new', to: 'scale_comparison_photos#new'
   post '/museums/create', to: 'scale_comparison_photos#create'
+  get '/museums/:id', to: 'scale_comparison_photos#show', as: 'museum_show'
 
   get 'terms_of_service', to: 'static_pages#terms_of_service'
   get 'privacy_policy', to: 'static_pages#privacy_policy'
