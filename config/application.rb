@@ -42,5 +42,8 @@ module PuchiUniverse
 
     #日本語化
     config.i18n.default_locale = :ja
+
+    #日本時間に変更
+    config.time_zone = 'Tokyo'
   end
 end

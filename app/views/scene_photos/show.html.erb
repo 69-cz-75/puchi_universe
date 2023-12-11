@@ -30,7 +30,7 @@
         <p><%= simple_format @scene_photo.caption %></p>
       </div>
       <div class='text-gray-500 font-thin text-sm mb-6 mx-3 px-2'>
-        <p>投稿日時: <%= @scene_photo.created_at.strftime("%Y年%m月%d日 %H:%M") %></p>
+        <p><%= l @scene_photo.created_at %></p>
       </div>
 
       <hr class="mb-5">

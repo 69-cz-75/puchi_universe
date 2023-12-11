@@ -8,6 +8,9 @@ ja:
     message:
       created: '投稿しました'
       not_created: '投稿できませんでした'
+  time:
+    formats:
+      default: "%Y年%m月%d日 %H:%M"
   errors:
     messages:
       extension_allowlist_error: "は許可されていない拡張子が含まれています"
@@ -45,6 +48,12 @@ ja:
       no_result: '検索結果:該当なし'
     new:
       create: '博物館に投稿'
+    show:
+      detail: '詳細情報'
+      product_name: '商品名'
+      company: '販売元'
+      kind: '種類'
+      content: '内容'
     form:
       new:
         post: '投稿する'
