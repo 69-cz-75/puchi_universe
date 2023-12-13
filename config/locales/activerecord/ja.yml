@@ -15,6 +15,7 @@ ja:
         images: '画像'
         title: 'タイトル'
         caption: 'キャプション'
+        tag_names: '素材タグ'
       scale_comparison_photo:
         images: '画像'
         product_name: '商品名'

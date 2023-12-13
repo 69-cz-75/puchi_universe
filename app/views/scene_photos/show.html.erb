@@ -29,6 +29,14 @@
       <div class='text-gray-500 font-thin text-sm mb-6 mx-3 px-2'>
         <p><%= simple_format @scene_photo.caption %></p>
       </div>
+      <div class='text-sm mb-5 mx-3 px-2'>
+        <% @scene_photo.tags.each do |tag| %>
+          <%= link_to galleries_path(tag_name: tag.name), style: "padding: 5px 10px; margin-right: 5px; border-radius: 5px;background-color: #f0f0f0;" do %>
+            <%= tag.name %>
+            <% end %>
+        <% end %>
+      </div>
+
       <div class='text-gray-500 font-thin text-sm mb-6 mx-3 px-2'>
         <p><%= l @scene_photo.created_at %></p>
       </div>
