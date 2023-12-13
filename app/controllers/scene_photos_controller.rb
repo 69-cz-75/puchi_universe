@@ -1,6 +1,6 @@
 class ScenePhotosController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create]
-  before_action :set_post, only: %i[edit update destroy]
+  before_action :set_scene_photo, only: %i[edit update destroy]
 
   def index
     @scene_photos = ScenePhoto.all.order(created_at: :desc)
