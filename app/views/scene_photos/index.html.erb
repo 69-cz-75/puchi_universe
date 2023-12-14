@@ -18,7 +18,7 @@
       <%= render @scene_photos %>
     </div>
   </div>
-    <%= paginate @scene_photos %>
+    <%= paginate @scene_photos, theme: 'custom_theme' %>
   <% else %>
   <div class="h-96">
     <div class="container mx-auto p-5 sm:h-full flex items-center justify-center">
