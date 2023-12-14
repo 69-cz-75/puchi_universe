@@ -12,6 +12,8 @@ class ScenePhoto < ApplicationRecord
   #タイトルが未入力の場合submit時に無題というタイトルが挿入される。
   before_validation :set_default_title
 
+  scope :with_tag, ->(tag_name) { joins(:tags).where(tags: { name: tag_name }) }
+
   mount_uploaders :images, ScenePhotoUploader
 
   def save_with_tags(tag_names:)

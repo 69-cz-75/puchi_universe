@@ -62,6 +62,10 @@ gem 'carrierwave', '~> 3.0'
 #[https://github.com/minimagick/minimagick]
 gem "mini_magick"
 
+#[https://github.com/kaminari/kaminari]
+#ページネーション
+gem 'kaminari'
+
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   #gem "debug", platforms: %i[ mri mingw x64_mingw ]

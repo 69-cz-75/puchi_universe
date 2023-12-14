@@ -3,7 +3,15 @@ class ScenePhotosController < ApplicationController
   before_action :set_scene_photo, only: %i[edit update destroy]
 
   def index
-    @scene_photos = ScenePhoto.all.order(created_at: :desc)
+    @current_tag = params[:tag_name] if params[:tag_name].present?
+
+    scene_photos =
+      if (tag_name = params[:tag_name])
+        ScenePhoto.with_tag(tag_name)
+      else
+        ScenePhoto.all
+      end
+    @scene_photos = scene_photos.order(created_at: :desc).page(params[:page]).per(24)
   end
 
   def new
