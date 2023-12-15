@@ -1,6 +1,6 @@
 class ScaleComparisonPhotosController < ApplicationController
   def index
-    @scale_comparison_photos = ScaleComparisonPhoto.all.order(created_at: :desc)
+    @scale_comparison_photos = ScaleComparisonPhoto.all.order(created_at: :desc).page(params[:page]).per(10)
   end
 
   def new

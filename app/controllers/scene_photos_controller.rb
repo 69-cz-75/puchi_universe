@@ -12,6 +12,7 @@ class ScenePhotosController < ApplicationController
         ScenePhoto.all
       end
     @scene_photos = scene_photos.order(created_at: :desc).page(params[:page]).per(24)
+    @search_results_count = scene_photos.count
   end
 
   def new
