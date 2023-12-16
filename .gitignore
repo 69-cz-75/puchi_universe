@@ -48,3 +48,5 @@
 
 # yarn
 yarn-error.log
+
+/.env
