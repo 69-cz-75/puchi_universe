@@ -22,6 +22,10 @@
                 <% end %>
 
                 <% if current_user %>
+                  <%= link_to my_page_path(current_user), class: 'font-bold' do %>
+                    <%= current_user.profile.name %>
+                  <% end %>
+                  <hr class="mb-5 mt-5">
                   <%= link_to t('scene_photos.new.create'), galleries_new_path, class: 'btn btn-ghost' %>
                   <%= link_to t('scale_comparison_photos.new.create'), museums_new_path, class: 'btn btn-ghost' %>
                   <hr class="mb-5 mt-5">

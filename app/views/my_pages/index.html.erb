@@ -1,0 +1,13 @@
+<%= render 'user_profile', profile: @profile %>
+<div class="w-full mx-auto lg:h-fit flex items-center justify-center">
+  <div class="grid sm:grid-cols-2 sm:gap-1 md:grid-cols-3 md:gap-2 lg:grid-cols-4 lg:gap-6">
+    <% @user_scene_photos.each do |scene_photo| %>
+      <%= link_to gallery_show_path(scene_photo), class: "m-2" do %>
+        <% thumb_url = scene_photo.images[0].thumb.url %>
+        <%= image_tag thumb_url, class: "w-full h-auto object-cover", style: "aspect-ratio:#{226.0/240}" %>
+      <% end %>
+    <% end %>
+  </div>
+</div>
+
+<%= paginate @user_scene_photos, theme: 'custom_theme' %>

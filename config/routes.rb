@@ -9,6 +9,9 @@ Rails.application.routes.draw do
   post '/museums/create', to: 'scale_comparison_photos#create'
   get '/museums/:id', to: 'scale_comparison_photos#show', as: 'museum_show'
 
+  get '/my_page/:id', to: 'my_pages#show', as: :my_page
+  #get '/mypage/gallery', to: 'my_pages#index', as: 'user_gallery'
+
   get 'terms_of_service', to: 'static_pages#terms_of_service'
   get 'privacy_policy', to: 'static_pages#privacy_policy'
 
