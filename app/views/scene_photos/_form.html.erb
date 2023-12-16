@@ -5,7 +5,7 @@
     <div class="flex items-center">
       <%= f.label :images, class: 'font-medium', for: "scene_photo_images" %><span class="text-red-500">*</span>
     </div>
-    <%= f.file_field :images, multiple: true, id: "scene_photo_images", class: "file-input file-input-bordered w-full max-w-xs", accept: 'images/*' %>
+    <%= f.file_field :images, multiple: true, id: "scene_photo_images", class: "file-input file-input-bordered w-full max-w-xs" %>
     <p class="text-gray-400">JPEG / GIF / PNG</p>
     <p class="text-gray-400">1枚5MB以内、最大5枚アップロードできます</p>
     </div>
