@@ -17,9 +17,8 @@
               <ul class="menu p-4 w-80 min-h-full bg-base-200">
               <!-- Sidebar content here -->
                 <% if !current_user %>
-                  <%= render(LoginButtonComponent.new(loginbutton: @loginbutton)) %>
-                  <%= render(SignupButtonComponent.new(signupbutton: @signupbutton)) %>
-                  <hr>
+                  <%= link_to((t 'defaults.login'), new_user_session_path, class: 'btn btn-active btn-ghost mb-3') %>
+                  <%= link_to((t 'defaults.signup'), new_user_registration_path, class: 'btn btn-active btn-accent mb-3') %>
                 <% end %>
 
                 <% if current_user %>
