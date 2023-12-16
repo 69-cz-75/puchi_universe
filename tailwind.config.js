@@ -11,5 +11,17 @@ module.exports = {
   ],
   daisyui: {
     themes: ["light"]
+  },
+  theme: {
+    screens: {
+      'sm': '360px',
+      // => @media (min-width: 360px) { ... }
+
+      'md': '520px',
+      // => @media (min-width: 520px) { ... }
+
+      'lg': '960px',
+      // => @media (min-width: 960px) { ... }
+    }
   }
 }

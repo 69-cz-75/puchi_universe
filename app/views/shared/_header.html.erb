@@ -42,25 +42,23 @@
     <div class="navbar-center">
       <%= link_to root_path do %>
         <!--ロゴは仮ロゴ。もう少し小さいサイズにしたい-->
-        <%= image_tag('logo.png', alt: 'header_logo') %>
+        <%= image_tag('logo.png', alt: 'header_logo', class: 'sm:max-w-[150px] h-auto md:max-w-full') %>
       <% end %>
     </div>
 
 
-    <div class="navbar-end">
-      <button class="btn btn-ghost mx-5 mb-3">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
-      </button>
+  <div class="navbar-end flex items-center">
+    <!--button class="btn btn-ghost mb-3 w-14"-->
+      <!--svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /--><!--/svg-->
+    <!--/button-->
 
-      <!--アカウント登録ボタンとログインボタンの表示-->
-      <% if request.path == new_user_session_path && !user_signed_in? %>
-        <!-- ログインページで、かつユーザーが未ログインの場合のコード -->
-        <%= render(SignupButtonComponent.new(signupbutton: @signupbutton)) %>
-      <% elsif !user_signed_in? %>
-        <!-- その他のページで、かつユーザーが未ログインの場合のコード -->
-        <%= render(LoginButtonComponent.new(loginbutton: @loginbutton)) %>
-      <% end %>
-    </div>
-    
-  </div>
+  <!-- アカウント登録ボタンとログインボタンの表示 -->
+  <% if request.path == new_user_session_path && !user_signed_in? %>
+    <!-- ログインページで、かつユーザーが未ログインの場合のコード -->
+    <%= render(SignupButtonComponent.new(signupbutton: @signupbutton)) %>
+  <% elsif !user_signed_in? %>
+    <!-- その他のページで、かつユーザーが未ログインの場合のコード -->
+    <%= render(LoginButtonComponent.new(loginbutton: @loginbutton)) %>
+  <% end %>
+</div>
 </header>
