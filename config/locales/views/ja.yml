@@ -14,6 +14,11 @@ ja:
   errors:
     messages:
       extension_allowlist_error: "は許可されていない拡張子が含まれています"
+  views:
+    pagination:
+      truncate: "..."
+      previous: '<'
+      next: '>'
   users:
     registrations:
       new:
@@ -36,6 +41,7 @@ ja:
       birthdate: '生年月日'
   scene_photos:
     index:
+      contents: '作品'
       no_result: '作品がありません'
     new:
       create: '美術館に投稿'

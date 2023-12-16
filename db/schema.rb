@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_12_06_030009) do
+ActiveRecord::Schema[7.0].define(version: 2023_12_11_133251) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -46,6 +46,15 @@ ActiveRecord::Schema[7.0].define(version: 2023_12_06_030009) do
     t.index ["user_id"], name: "index_scene_photos_on_user_id"
   end
 
+  create_table "taggings", force: :cascade do |t|
+    t.bigint "scene_photo_id", null: false
+    t.bigint "tag_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["scene_photo_id"], name: "index_taggings_on_scene_photo_id"
+    t.index ["tag_id"], name: "index_taggings_on_tag_id"
+  end
+
   create_table "tags", force: :cascade do |t|
     t.string "name", null: false
     t.datetime "created_at", null: false
@@ -68,4 +77,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_12_06_030009) do
   add_foreign_key "profiles", "users"
   add_foreign_key "scale_comparison_photos", "users"
   add_foreign_key "scene_photos", "users"
+  add_foreign_key "taggings", "scene_photos"
+  add_foreign_key "taggings", "tags"
 end

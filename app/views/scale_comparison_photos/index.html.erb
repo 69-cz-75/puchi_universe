@@ -10,11 +10,12 @@
 
 
 <% if @scale_comparison_photos.present? %>
-<div class="container px-6 py-10 mx-auto justify-center">
+<div class="container px-4 py-10 mx-auto justify-center">
   <div class="grid sm:grid-cols-1 gap-8 mt-8 ">
     <%= render @scale_comparison_photos %>
   </div>
 </div>
+<%= paginate @scale_comparison_photos, theme: 'custom_theme' %>
 <% else %>
   <div class="h-96">
     <div class="container mx-auto p-5 sm:h-full flex items-center justify-center">

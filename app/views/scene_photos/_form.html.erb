@@ -12,13 +12,20 @@
 
   <div class="field mb-5">
     <%= f.label :title, class: 'font-medium', for: "scene_photo_title" %><span class="text-red-500">*</span><span class="text-gray-400"> (32文字以内) </span>
-    <%= f.text_field :title, id: "scene_photo_title", class: 'w-full bg-gray-100 border border-gray-300 p-2  outline-none', value: '' %>
+    <%= f.text_field :title, id: "scene_photo_title", class: 'w-full bg-gray-100 border border-gray-300 p-2  outline-none', value: @scene_photo_title || '' %>
     <p class="text-gray-400">空欄のまま投稿すると自動的に"無題"というタイトルで投稿されます</p>
     </div>
+
   <div class="field mb-5">
     <%= f.label :caption, class: 'font-medium', for: "scene_photo_caption" %><span class="text-gray-400"> (3000文字以内) </span>
     <%= f.text_area :caption, id: "scene_photo_caption", class: 'w-full bg-gray-100 sec p-3 h-60 border border-gray-300 outline-none' %>
   </div>
+
+  <div class="field mb-5">
+    <%= f.label :tag_names, class: 'font-medium', for: "scene_photo_caption" %>
+    <%= f.text_field :tag_names, id: "tag_names", class: 'w-full bg-gray-100 border border-gray-300 p-2  outline-none', placeholder: ',で区切って入力してください' %>
+    <p class="text-gray-400">使用しているドール・フィギュア・ミニチュアの情報を入力できます</p>
+    </div>
 
   <!-- Buttons -->
   <div class="actions mb-7 text-center">
