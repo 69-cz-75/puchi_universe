@@ -7,14 +7,14 @@
     </div>
     <%= f.file_field :images, multiple: true, id: "scene_photo_images", class: "file-input file-input-bordered w-full max-w-xs" %>
     <p class="text-gray-400">JPEG / GIF / PNG</p>
-    <p class="text-gray-400">1枚5MB以内、最大5枚アップロードできます</p>
+    <p class="text-gray-400">1枚5MB以内、最大3枚アップロードできます</p>
     </div>
 
   <div class="field mb-5">
     <%= f.label :title, class: 'font-medium', for: "scene_photo_title" %><span class="text-red-500">*</span><span class="text-gray-400"> (32文字以内) </span>
     <%= f.text_field :title, id: "scene_photo_title", class: 'w-full bg-gray-100 border border-gray-300 p-2  outline-none', value: @scene_photo_title || '' %>
     <p class="text-gray-400">空欄のまま投稿すると自動的に"無題"というタイトルで投稿されます</p>
-    </div>
+  </div>
 
   <div class="field mb-5">
     <%= f.label :caption, class: 'font-medium', for: "scene_photo_caption" %><span class="text-gray-400"> (3000文字以内) </span>

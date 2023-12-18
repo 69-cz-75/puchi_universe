@@ -1,0 +1,48 @@
+<body>
+  <div class="relative flex flex-col justify-center min-h-0 overflow-hidden">
+    <div class="w-full p-6 sm:max-w-lg md:max-w-xl lg:max-w-2xl mx-auto">
+
+    <!--form-->
+    <%= form_with model: @scene_photo, url: update_gallery_path(@scene_photo), method: :patch do |f| %>
+      <%= render 'shared/error_messages', object: f.object %>
+
+      <div class="mb-5">
+        <!-- 画像一覧を表示するコードを追加 -->
+        <div class="grid sm:grid-cols-2 sm:gap-1 md:grid-cols-3 md:gap-2 lg:grid-cols-4 lg:gap-6">
+          <% @scene_photo.images.each do |image| %>
+            <%= image_tag(image.url, class: "mb-2") %>
+          <% end %>
+        </div>
+      </div>
+
+      <div class="field mb-5">
+        <%= f.label :title, class: 'font-medium', for: "scene_photo_title" %><span class="text-red-500">*</span><span class="text-gray-400"> (32文字以内) </span>
+        <%= f.text_field :title, id: "scene_photo_title", class: 'w-full bg-gray-100 border border-gray-300 p-2  outline-none', value: @scene_photo_title || '' %>
+        <p class="text-gray-400">空欄のまま投稿すると自動的に"無題"というタイトルで投稿されます</p>
+      </div>
+    
+      <div class="field mb-5">
+        <%= f.label :caption, class: 'font-medium', for: "scene_photo_caption" %><span class="text-gray-400"> (3000文字以内) </span>
+        <%= f.text_area :caption, id: "scene_photo_caption", class: 'w-full bg-gray-100 sec p-3 h-60 border border-gray-300 outline-none' %>
+      </div>
+    
+      <div class="field mb-5">
+        <%= f.label :tag_names, class: 'font-medium', for: "scene_photo_caption" %>
+        <%= f.text_field :tag_names, id: "tag_names", class: 'w-full bg-gray-100 border border-gray-300 p-2  outline-none', placeholder: ',で区切って入力してください' %>
+        <p class="text-gray-400">使用しているドール・フィギュア・ミニチュアの情報を入力できます</p>
+        </div>
+    
+      <!-- Buttons -->
+      <div class="actions mb-7 text-center">
+        <%= f.submit (t '.update'), class: "btn btn-active btn-accent" %>
+      </div>
+    <% end %>
+    <div class="actions mb-7 text-center">
+    <%= form_with model: @scene_photo, url: destroy_gallery_path(@scene_photo), method: :delete do |form| %>
+      <%= form.button t('.delete'), class: 'btn btn-danger' %>
+    <% end %>
+    </div>
+
+    </div>
+  </div>
+</body>

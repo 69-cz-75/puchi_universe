@@ -4,6 +4,10 @@ Rails.application.routes.draw do
   get '/galleries/new', to: 'scene_photos#new'
   post '/galleries/create', to: 'scene_photos#create'
   get '/galleries/:id', to: 'scene_photos#show', as: 'gallery_show'
+  get '/galleries/:id/edit', to: 'scene_photos#edit', as: 'edit_gallery'
+  patch '/galleries/:id/update', to: 'scene_photos#update', as: 'update_gallery'
+  delete '/galleries/:id/destroy', to: 'scene_photos#destroy', as: 'destroy_gallery'
+
   get '/museums', to: 'scale_comparison_photos#index', as: 'museums'
   get '/museums/new', to: 'scale_comparison_photos#new'
   post '/museums/create', to: 'scale_comparison_photos#create'
