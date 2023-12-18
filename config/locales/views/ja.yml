@@ -45,6 +45,11 @@ ja:
       no_result: '作品がありません'
     new:
       create: '美術館に投稿'
+    show:
+      edit: '編集する'
+    edit:
+      update: '更新する'
+      delete: '削除する'
     form:
       new:
         post: '投稿する'

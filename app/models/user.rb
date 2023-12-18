@@ -10,4 +10,7 @@ class User < ApplicationRecord
 
   accepts_nested_attributes_for :profile
 
+  def owns_scene_photo?(scene_photo)
+    scene_photo.user == self
+  end
 end

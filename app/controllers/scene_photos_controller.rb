@@ -33,6 +33,27 @@ class ScenePhotosController < ApplicationController
     @scene_photo = ScenePhoto.find(params[:id])
   end
 
+  def edit
+    @scene_photo = current_user.scene_photos.find(params[:id])
+    @scene_photo_title = @scene_photo.title || ''
+  end
+
+  def update
+    @scene_photo = current_user.scene_photos.find(params[:id])
+    if @scene_photo.update(scene_photo_params)
+      redirect_to gallery_show_path(@scene_photo), success: t('defaults.message.updated')
+    else
+      @scene_photo_title = @scene_photo.title
+      render :edit, status: :unprocessable_entity
+    end
+  end
+
+  def destroy
+    @scene_photo = current_user.scene_photos.find(params[:id])
+    @scene_photo.destroy!
+    redirect_to galleries_path, success: t('defaults.message.deleted')
+  end
+
   private
 
   def scene_photo_params
