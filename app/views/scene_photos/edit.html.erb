@@ -3,7 +3,7 @@
     <div class="w-full p-6 sm:max-w-lg md:max-w-xl lg:max-w-2xl mx-auto">
 
     <!--form-->
-    <%= form_with model: @scene_photo, url: update_gallery_path(@scene_photo), method: :patch do |f| %>
+    <%= form_with model: @scene_photo, url: gallery_path(@scene_photo), method: :patch do |f| %>
       <%= render 'shared/error_messages', object: f.object %>
 
       <div class="mb-5">
@@ -38,9 +38,9 @@
       </div>
     <% end %>
     <div class="actions mb-7 text-center">
-    <%= form_with model: @scene_photo, url: destroy_gallery_path(@scene_photo), method: :delete do |form| %>
-      <%= form.button t('.delete'), class: 'btn btn-danger' %>
-    <% end %>
+      <%= form_with model: @scene_photo, url: gallery_path(@scene_photo), method: :delete do |form| %>
+        <%= form.button t('.delete'), class: 'btn btn-danger' %>
+      <% end %>
     </div>
 
     </div>

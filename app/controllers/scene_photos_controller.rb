@@ -41,7 +41,7 @@ class ScenePhotosController < ApplicationController
   def update
     @scene_photo = current_user.scene_photos.find(params[:id])
     if @scene_photo.update(scene_photo_params)
-      redirect_to gallery_show_path(@scene_photo), success: t('defaults.message.updated')
+      redirect_to gallery_path(@scene_photo), success: t('defaults.message.updated')
     else
       @scene_photo_title = @scene_photo.title
       render :edit, status: :unprocessable_entity

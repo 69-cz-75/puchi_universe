@@ -1,17 +1,9 @@
 Rails.application.routes.draw do
   root "scene_photos#index"
-  get '/galleries', to: 'scene_photos#index', as: 'galleries'
-  get '/galleries/new', to: 'scene_photos#new'
-  post '/galleries/create', to: 'scene_photos#create'
-  get '/galleries/:id', to: 'scene_photos#show', as: 'gallery_show'
-  get '/galleries/:id/edit', to: 'scene_photos#edit', as: 'edit_gallery'
-  patch '/galleries/:id/update', to: 'scene_photos#update', as: 'update_gallery'
-  delete '/galleries/:id/destroy', to: 'scene_photos#destroy', as: 'destroy_gallery'
 
-  get '/museums', to: 'scale_comparison_photos#index', as: 'museums'
-  get '/museums/new', to: 'scale_comparison_photos#new'
-  post '/museums/create', to: 'scale_comparison_photos#create'
-  get '/museums/:id', to: 'scale_comparison_photos#show', as: 'museum_show'
+  resources :galleries, controller: 'scene_photos', path: 'galleries'
+
+  resources :museums, only: [:index, :show, :new, :create], controller: 'scale_comparison_photos', path: 'museums'
 
   get '/my_page/:id', to: 'my_pages#show', as: :my_page
   #get '/mypage/gallery', to: 'my_pages#index', as: 'user_gallery'

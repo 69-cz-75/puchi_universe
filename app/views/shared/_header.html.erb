@@ -26,8 +26,8 @@
                     <%= current_user.profile.name %>
                   <% end %>
                   <hr class="mb-5 mt-5">
-                  <%= link_to t('scene_photos.new.create'), galleries_new_path, class: 'btn btn-ghost' %>
-                  <%= link_to t('scale_comparison_photos.new.create'), museums_new_path, class: 'btn btn-ghost' %>
+                  <%= link_to t('scene_photos.new.create'), new_gallery_path, class: 'btn btn-ghost' %>
+                  <%= link_to t('scale_comparison_photos.new.create'), new_museum_path, class: 'btn btn-ghost' %>
                   <hr class="mb-5 mt-5">
                   <%= button_to (t 'defaults.logout'), destroy_user_session_path, method: :delete, class: 'btn btn-ghost btn-block', id: 'logout-button' %>
                 <% end %>

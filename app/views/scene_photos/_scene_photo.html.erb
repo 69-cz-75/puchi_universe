@@ -1,4 +1,4 @@
-<%= link_to gallery_show_path(scene_photo) do %>
+<%= link_to gallery_path(scene_photo) do %>
   <div id="scene-photo-id-<%= scene_photo.id %>" class="max-w-sm mx-auto relative cursor-pointer">
     <% thumb_url = scene_photo.images[0].thumb.url %>
     <%= image_tag thumb_url, class: "w-full h-auto object-cover", style: "aspect-ratio:#{226.0/240}" %>

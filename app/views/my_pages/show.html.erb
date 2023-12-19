@@ -3,7 +3,7 @@
 <% if @user.scene_photos.any? %>
   <div class="flex flex-wrap justify-center items-center mb-5">
     <% @user.scene_photos.limit(6).each do |scene_photo| %> <!-- limit(6)で最大6つまで取得 -->
-      <%= link_to gallery_show_path(scene_photo), class: "m-2" do %>
+      <%= link_to gallery_path(scene_photo), class: "m-2" do %>
         <% thumb_url = scene_photo.images[0].thumb.url %>
         <%= image_tag thumb_url, class: "w-full h-auto object-cover", style: "aspect-ratio:#{226.0/240}" %>
       <% end %>
