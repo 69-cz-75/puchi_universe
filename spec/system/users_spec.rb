@@ -18,6 +18,9 @@ RSpec.describe "Users", type: :system do
 
     click_button "アカウントを作成" 
 
+    #ここで待機しないとjs: trueの時にテストが通らない
+    expect(page).to have_selector('label[for="my-drawer-3"].btn.btn-square.btn-ghost', wait: 10)
+
     find('label[for="my-drawer-3"].btn.btn-square.btn-ghost').click #ハンバーガーアイコンをクリック
     expect(page).to have_selector('#logout-button', text: 'ログアウト')
   end

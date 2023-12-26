@@ -109,15 +109,12 @@ RSpec.describe ScenePhoto, type: :model do
     let(:user) { FactoryBot.create(:user) }
     let(:scene_photo) { FactoryBot.build(:scene_photo, user: user, images: []) }
 
-    before do
+    it "画像が3枚以下なら登録されること" do
       3.times do
         image_path = Rails.root.join('spec', 'fixtures', 'test_image1.jpg')
         scene_photo.images << File.open(image_path)
       end
-    end
 
-    it "画像が3枚以下なら登録されること" do
-      scene_photo.valid?
       expect(scene_photo.valid?).to be true
     end
   end
@@ -126,14 +123,12 @@ RSpec.describe ScenePhoto, type: :model do
     let(:user) { FactoryBot.create(:user) }
     let(:scene_photo) { FactoryBot.build(:scene_photo, user: user, images: []) }
 
-    before do
+    it "画像が3枚以上登録された場合にエラーが発生すること" do
       4.times do
         image_path = Rails.root.join('spec', 'fixtures', 'test_image1.jpg')
         scene_photo.images << File.open(image_path)
       end
-    end
 
-    it "画像が3枚以上登録された場合にエラーが発生すること" do
       scene_photo.valid?
       expect(scene_photo.errors[:images]).to include("は3枚までアップロードできます。")
     end
