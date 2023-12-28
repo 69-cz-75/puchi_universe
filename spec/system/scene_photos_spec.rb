@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe "ScenePhotos", type: :system, js: true do
+RSpec.describe "ScenePhotos", type: :system do
   scenario "ScenePhotoに投稿ができる" do
     user = FactoryBot.create(:user)
 

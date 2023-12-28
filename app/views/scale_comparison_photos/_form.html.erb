@@ -1,9 +1,9 @@
 <%= form_with model: @scale_comparison_photo, url: museums_path, local: true do |f| %>
   <%= render 'shared/error_messages', object: f.object %>
   <div class="field mb-5">
-    <%= f.label :images, class: 'font-medium', for: "scene_photo_images" %>
+    <%= f.label :images, class: 'font-medium', for: "scale_comparison_photo_images" %>
     <br>
-    <%= f.file_field :images, multiple: true, id: "scene_photo_images", class: "file-input file-input-bordered w-full max-w-xs" %>
+    <%= f.file_field :images, multiple: true, id: "scale_comparison_photo_images", class: "file-input file-input-bordered w-full max-w-xs" %>
     <p class="text-gray-400">JPEG / GIF / PNG</p>
     <p class="text-gray-400">1枚5MB以内、最大10枚アップロードできます</p>
     </div>
