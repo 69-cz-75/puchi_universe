@@ -3,5 +3,6 @@ FactoryBot.define do
     name { "john" }
     gender { "male" }
     birthdate { Date.new(2012, 1, 2) }
+    association :user
   end
 end

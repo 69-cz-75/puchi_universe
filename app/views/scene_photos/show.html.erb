@@ -24,10 +24,10 @@
     <div class='w-full'>
 
     <% if current_user && current_user.owns_scene_photo?(@scene_photo) %>
-  <div class="text-center mb-3">
-    <%= link_to(t('.edit'), edit_gallery_path(@scene_photo), class: 'btn') %>
-  </div>
-<% end %>
+      <div class="text-center mb-3">
+        <%= link_to(t('.edit'), edit_gallery_path(@scene_photo), class: 'btn') %>
+      </div>
+    <% end %>
 
       <hr class="mb-5">
       <div class='text-gray-600 font-semibold text-lg mb-2 mx-3 px-2'>

@@ -18,7 +18,20 @@ RSpec.describe "Users", type: :system do
 
     click_button "アカウントを作成" 
 
+    #以下のfindが二つないとうまくハンバーガアイコンをクリックしてくれない
+    #やってること一緒だけど他にどっちかをコメントアウトするとテストがうまくいかないのでこのままでいく
+    find('#humberger-icon', wait: 10).click
     find('label[for="my-drawer-3"].btn.btn-square.btn-ghost').click #ハンバーガーアイコンをクリック
+
     expect(page).to have_selector('#logout-button', text: 'ログアウト')
+  end
+
+  scenario "間違えたメールアドレスだとログインできない" do
+    visit new_user_session_path
+    fill_in 'メールアドレス', with: 'nonexistent@example.com'
+    fill_in 'パスワード', with: 'password123'
+    click_button 'ログイン'
+
+    expect(page).to have_content 'メールアドレス もしくはパスワードが不正です。'
   end
 end
