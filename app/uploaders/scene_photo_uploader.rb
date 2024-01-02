@@ -62,4 +62,26 @@ class ScenePhotoUploader < CarrierWave::Uploader::Base
   def size_range
     1.byte..5.megabytes
   end
+
+  #WebPに変換
+  process :convert_to_webp
+
+  def convert_to_webp
+    manipulate! do |img|
+      img.format 'webp'
+      img
+    end
+  end
+
+  #ファイル名をランダムにし拡張子を.webpで保存
+  #[https://github.com/carrierwaveuploader/carrierwave/wiki/How-to%3A-Create-random-and-unique-filenames-for-all-versioned-files]
+  def filename
+    "#{secure_token}" + '.webp' if original_filename.present?
+  end
+
+  protected
+  def secure_token
+    var = :"@#{mounted_as}_secure_token"
+    model.instance_variable_get(var) or model.instance_variable_set(var, SecureRandom.uuid)
+  end
 end
