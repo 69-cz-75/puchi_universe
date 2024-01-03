@@ -20,8 +20,9 @@ RSpec.describe "Users", type: :system do
 
     #以下のfindが二つないとうまくハンバーガアイコンをクリックしてくれない
     #やってること一緒だけど他にどっちかをコメントアウトするとテストがうまくいかないのでこのままでいく
-    find('#humberger-icon', wait: 10).click
-    find('label[for="my-drawer-3"].btn.btn-square.btn-ghost').click #ハンバーガーアイコンをクリック
+    #findが二つあると今度はエラーが出る。一時的に下のfindをコメントアウト。理屈としては二つ目のfindはいらないのでこれが正しい形ではある
+    find('#hamburger-icon', wait: 10).click
+    #find('label[for="my-drawer-3"].btn.btn-square.btn-ghost').click #ハンバーガーアイコンをクリック
 
     expect(page).to have_selector('#logout-button', text: 'ログアウト')
   end
